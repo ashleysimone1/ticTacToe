@@ -26,10 +26,13 @@
     cursor: pointer;
 }
 
+.boxes:hover {
+    background-color: blueviolet;
+}
 .board {
     height: 600px;
     width: 564px;
     display: flex;
     margin: auto;
-    
+
 }
