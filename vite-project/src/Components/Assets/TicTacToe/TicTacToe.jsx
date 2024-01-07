@@ -43,6 +43,10 @@ export const TicTacToe = () => {
     }
   }
 
+  const winner = (winningPlayer) => {
+    setLock(true);
+  }
+
   return (
     <div className = 'container'>
         <h1 className="title">Tic Tac Toe Game In <span>React.js</span></h1>
