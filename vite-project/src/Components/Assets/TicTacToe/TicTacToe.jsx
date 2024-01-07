@@ -11,21 +11,37 @@ export const TicTacToe = () => {
   let [lock, setLock] = React.useState(false);
 
   const handlePlayerToggler = (e, num) => {
-    if(lock) {
-      return 0;
-    }
 
     if(count%2===0){
-      e.target.innerHTML = `<img src=${circle}/>`;
-      data[num] = "cross";
+      e.target.innerHTML = `<h1>X</h1>`;
+      data[num] = "x";
       setCount(count++);
-    }else{
-      e.target.innerHTML = `<img src=${cross}/>`;
-      data[num] = "circle";
+    }else if(count%2===1){
+      e.target.innerHTML = `<h1>O</h1>`;
+      data[num] = "o";
       setCount(count++);
     }
   }
 
+  const checkWinner = () => {
+    if(data[0] === data[1] && data[1] === data[2] && data[0] !== "") {
+      return true;
+    }else if(data[3] === data[4] && data[4] === data[5] && data[3] !== "") {
+      return true;
+    }else if(data[6] === data[7] && data[7] === data[8] && data[6] !== "") {
+      return true;
+    }else if(data[0] === data[3] && data[3] === data[6] && data[0] !== "") {
+      return true;
+    }else if(data[1] === data[4] && data[4] === data[7] && data[1] !== "") {
+      return true;
+    }else if(data[2] === data[5] && data[5] === data[8] && data[2] !== "") {
+      return true;
+    }else if(data[0] === data[4] && data[4] === data[8] && data[0] !== "") {
+      return true;
+    }else if(data[2] === data[4] && data[4] === data[6] && data[2] !== "") {
+      return true;
+    }
+  }
 
   return (
     <div className = 'container'>
