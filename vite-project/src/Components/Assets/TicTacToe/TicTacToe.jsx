@@ -1,7 +1,7 @@
 import React from 'react'
 import './TicTacToe.css'
-import circle from './o.png'
-import cross from './x.png'
+const circle = require('./o.png')
+const cross = require() './x.png'
 
 let data = ["", "", "", "", "", "", "", "", ""];
 
@@ -16,7 +16,7 @@ export const TicTacToe = () => {
     }
 
     if(count%2===0){
-      e.target.innerHTML = `<img src=${circle}/>`;
+      e.target.innerHTML = `<img src= />`;
       data[num] = "cross";
       setCount(count++);
     }else{
